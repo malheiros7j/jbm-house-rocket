@@ -3,6 +3,7 @@
 Esse é um projeto fícticio cuja empresa, as perguntas e o contexto de negócio não são reais. Os dados foram obtidos pela plataforma de competição Kaggle. 
 (https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)
 
+Link to Heroku Project: https://jbm-analytics-house-rocket.herokuapp.com/
 
 # 1.0 Descrição e Desafio
 A House Rocket é uma plataforma digital que tem como modelo de negócio, a compra e venda de imóveis usando tecnologia.
