@@ -81,7 +81,7 @@ Para realizar esse projeto as seguintes premissas de negócio foram adotadas:
 |:--|:---:|:---:|
 | H1:  Imóveis que possuem vista para água, são em média 30% mais caros | FALSA | Investir em imóveis com vista para água (são 200% mais caros) |
 | H2:  Imóveis construídos antes do ano de 1955 são 50% mais baratos na média. | FALSA | Não investir baseado no ano de construção |
-| H3:  Imóveis com tamanho da área habitável acima da média são 50% mais caras que casas com sala abaixo da média | FALSA | Investir em imóveis com tamanho de área habitável acima da média |
+| H3:  Imóveis com tamanho da área habitável acima da média são 50% mais caras que casas com área de habitação abaixo da média | FALSA | Investir em imóveis com tamanho de área habitável acima da média |
 | H4:  Imóveis disponibilizados no verão são vendidos 5% mais caro em média que os imóveis disponibilizados no inverno. | VERDADEIRA | Investir em imóveis no périodo de inverno |
 | H5:  Imóveis com data de renovação são 40% mais caros em média que imóveis sem nenhuma reforma. | VERDADEIRA | Investir em imóveis sem renovação para possível reforma |
 | H6:  Imóveis sem porão possuem área total 20% maior que os imóveis com porão. | VERDADEIRA | Investir em imóveis sem porão |
@@ -107,16 +107,16 @@ Tendo em vista esse descoberta, seria interessante sim a empresa House Rocket se
 
 - Imóveis que não foram reformadas.
 - Imóveis com número de banheiros abaixo da média.
-- Imóveis com tamanho de sala de estar abaixo da média.
+- Imóveis com área de habitação abaixo da média.
 
 # 6. Avaliação Imobiliária
 Dentre a quantidade de imóveis selecionados como de alto potencial de venda foi feita mais uma análise baseada nos Insights de Negócio observados, sendo os principais deles:
 
   * Imóveis com reforma (yr_renovated) são 40% mais caros.
   * Imóveis com número de quartos (bedrooms) acima da média são 50% mais caros.
-  * Imóveis com sala de estar acima da média são 90% mais caras.
+  * Imóveis com área de habitação acima da média são 90% mais caras.
 
-Dentre os 150 imóveis com maior margem de lucro, foram selecionados outros imóveis com potencial de reforma utilizando os Insights encontrados. No total selecionamos 20 imóveis que não foram reformados, com número de quartos abaixo da média e área da sala de estar abaixo da média para que posteriormente a empresa possa realizar uma reforma contemplando esses atributos maximizando o seu preço de venda.
+Dentre os 150 imóveis com maior margem de lucro, foram selecionados outros imóveis com potencial de reforma utilizando os Insights encontrados. No total selecionamos 20 imóveis que não foram reformados, com número de quartos abaixo da média e área de habitação abaixo da média para que posteriormente a empresa possa realizar uma reforma contemplando esses atributos maximizando o seu preço de venda.
 
 |   | Valor US$ |
 |:-:|:-:|
