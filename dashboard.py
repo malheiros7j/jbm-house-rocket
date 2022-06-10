@@ -44,7 +44,7 @@ if options == 'Home':
 	
 	st.header('Premissas de Negócio')
 	st.write('Para realizar esse projeto as seguintes premissas de negócio foram adotadas:')
-	st.write('* Atributos cuja natureza é considerada de tipo Inteira foram transformadas em tipos inteiros para simplificação do projeto (por ex: numero de banheiros, quartos e etc.')
+	st.write('* Atributos cuja natureza é considerada de tipo Inteira foram transformadas em tipos inteiros para simplificação do projeto (por ex: numero de banheiros, quartos e etc).')
 	st.write('* Valores cujo ID eram duplicados foram removidos da base de dados.')
 	st.write('* A coluna price significa o preço que a casa foi / será comprada pela empresa House Rocket.')
 	st.write('* A coluna yr_renovated descreve o ano que as casas foram reformadas. Caso seja igual a 0 significa que o imóvel nunca foi reformado.')
@@ -517,13 +517,13 @@ def bussiness_hypothesis(data):
 		c2.plotly_chart(h2_plot,use_container_width=True)
 
 
-		######## H3: Properties that have living room size above avg are 50% expensive, on averge.######################
+		######## H3: Properties that have living room size above avg are 50% expensive, on average.######################
 		################################################################################################################
 		################################################################################################################
 
 		c3,c4 = st.columns(2)
 
-		#H3: Casas com sala de estar (sqft_living) acima da média são 50% mais caras que as casas com menores (sqft_living).
+		#H3: Casas com área de habitação (sqft_living) acima da média são 50% mais caras que as casas com menores (sqft_living).
 		avg_living = data['sqft_living'].mean()
 
 		above_avg_living = data.loc[data['sqft_living'] >= avg_living,'price'].mean()
@@ -536,10 +536,10 @@ def bussiness_hypothesis(data):
 		data['living_room'] = data['sqft_living'].apply(lambda x:'above_avg' if x >= avg_living else 'under_avg')
 		h3 = data[['price','living_room']].groupby('living_room').mean().reset_index()
 
-		c3.subheader('Hipótese 3: Imóveis com tamanho da sala de estar acima da média são 50% mais caras que casas com sala abaixo da média')
-		c3.write('* FALSO, Imóveis com sala de estar maior que a média são 88.58% mais caras que imóveis com sala de estar abaixo da média.')
+		c3.subheader('Hipótese 3: Imóveis com área de habitação acima da média são 50% mais caras que casas com área de habitação abaixo da média.')
+		c3.write('* FALSO, Imóveis com área de habitação maior que a média são 88.58% mais caras que imóveis com área de habitação abaixo da média.')
 
-		h3_plot = px.bar(h3,x='living_room',y='price',color='living_room',labels={'living_room':'Sala de Estar','price':'Preço'},template='simple_white')
+		h3_plot = px.bar(h3,x='living_room',y='price',color='living_room',labels={'living_room':'Área de Habitação','price':'Preço'},template='simple_white')
 		h3_plot.update_layout(showlegend=False)
 		c3.plotly_chart(h3_plot,use_container_width=True)
 
@@ -626,7 +626,7 @@ def bussiness_hypothesis(data):
 		data['bedroom_avg'] = data['bedrooms'].apply(lambda x:'above' if x >= avg_bedrooms else 'under')
 		h7 = data[['price','bedroom_avg']].groupby('bedroom_avg').mean().reset_index()
 
-		c7.subheader('Hipótese 7: Imóveis com número de quartos acima da média são 50% mais em média.')
+		c7.subheader('Hipótese 7: Imóveis com número de quartos acima da média são 50% mais caras em média.')
 		c7.write('* VERDADEIRO, imóveis com número de banheiro acima da média são 49.16% mais caras em média.')
 
 		h7_plot = px.bar(h7,x='bedroom_avg',y='price',color='bedroom_avg',labels={'bedroom_avg':'Media dos Quartos','price':'Preço'},template='simple_white')
@@ -750,10 +750,10 @@ def evaluation_house_rocket(df):
 		st.markdown("<h1 style='font-size:20px;color: black;'>Dentre a quantidade de imóveis selecionados como de alto potencial de venda foi feita mais uma análise baseada nos Insights de Negócio observados, sendo os principais deles:</h1>", unsafe_allow_html=True)
 		st.write('* Imóveis com reforma (yr_renovated) são 40% mais caros.')
 		st.write('* Imóveis com número de quartos (bedrooms) acima da média são 50% mais caros.')
-		st.write('* Imóveis com sala de estar acima da média são 90% mais caras.')
+		st.write('* Imóveis com área de habitação acima da média são 90% mais caras.')
 
 		st.write('Dentre os 150 imóveis com maior margem de lucro, foram selecionados outros imóveis com potencial de reforma utilizando os Insights encontrados. No total selecionamos 20 imóveis\
-			que não foram reformados, com número de quartos abaixo da média e área da sala de estar abaixo da média para que posteriormente a empresa possa realizar uma reforma contemplando esses atributos maximizando o seu preço de venda.')
+			que não foram reformados, com número de quartos abaixo da média e área da sala de habitação abaixo da média para que posteriormente a empresa possa realizar uma reforma contemplando esses atributos maximizando o seu preço de venda.')
 		
 		st.subheader('Tabela de Imóveis sugeridos para compra e venda.')
 		st.dataframe(selected_insight)
@@ -790,7 +790,7 @@ def evaluation_house_rocket(df):
 
 		st.markdown("<h1 style='font-size:15px;color: black;'> - Imóveis que não foram reformadas.</h1>", unsafe_allow_html=True)
 		st.markdown("<h1 style='font-size:15px;color: black;'> - Imóveis com número de banheiros abaixo da média.</h1>", unsafe_allow_html=True)
-		st.markdown("<h1 style='font-size:15px;color: black;'> - Imóveis com tamanho de sala de estar abaixo da média.</h1>", unsafe_allow_html=True)
+		st.markdown("<h1 style='font-size:15px;color: black;'> - Imóveis com tamanho da área de habitação abaixo da média.</h1>", unsafe_allow_html=True)
 
 
 		st.write('')
